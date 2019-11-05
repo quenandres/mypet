@@ -11,10 +11,11 @@ import {
 } from 'react-native';
 
 import Login from './src/Login';
+import Home from './src/Home';
 
 export default function App() {
     return (
-      <Login />
+      <Home />
     );
 }
 
