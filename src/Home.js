@@ -7,11 +7,11 @@ import {
   Image,
   TextInput,
   Dimensions,
-  TouchableOpacity,
+  StatusBar,
   Alert
 } from 'react-native';
 
-import bgImage from '../images/gatofondo.jpg';
+import bgImage from '../images/gato3.jpg';
 import logo from '../images/gato_negro.png';
 import Icon from 'react-native-vector-icons/Ionicons'
 
@@ -54,6 +54,7 @@ class Login extends Component {
 render() {
     return (
         <ImageBackground source={bgImage} style={styles.backgroundContainer}>
+            <Productos /> 
             <Menu />
         </ImageBackground>
     

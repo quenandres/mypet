@@ -15,6 +15,7 @@ import {
 
 import Constants from 'expo-constants';
 
+import { Actions } from 'react-native-router-flux';
 
 import bgImage from '../images/gatofondo.jpg';
 import logo from '../images/gato_negro.png';
@@ -26,84 +27,70 @@ const { height: HEIGHT } = Dimensions.get('window')
 
 const DATA = [
     {
+      id: 'bd7acbea-c1b1-46c2-aed5-35b5312d28ba',
+      title: 'Home',
+      page: 'home',
+    },
+    {
       id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-      title: 'First Item',
+      title: 'Productos',
+      page: 'productos',
     },
     {
       id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-      title: 'Second Item',
+      title: 'Tiendas',
+      page: 'tiendas',
     },
     {
-      id: '58694a0f-3da1-471f-bd96-145571e29d72',
-      title: 'Third Item',
+      id: '3ac68afc-c605-48d3-23f1-fbd91aa97f63',
+      title: 'Perfil',
+      page: 'perfil',
     },
-    {
-      id: '58694a0f-3da1-471f-gd96-145571e29d72',
-      title: 'Third Item',
-    },
-    {
-      id: '51294a0f-3da1-471f-bd96-145571e29d72',
-      title: 'Third Item',
-    },
-    {
-      id: '58694a0f-3da1-471f-bd96-445571e29d72',
-      title: 'Third Item',
-    },
-    {
-      id: '58694a0f-3da1-471f-bd96-147671e29d72',
-      title: 'Third Item',
-    },
-    {
-      id: '58694a0f-3da1-471f-bd96-145571e29d90',
-      title: 'Third Item',
-    },
-
   ];
 
 class Login extends Component {
 
     constructor() {
         super()
+    }  
+
+    home() {      
+      Actions.home();
     }
 
-    
-
-    onLogin() {
-        Alert.alert(
-            'acceso',
-            'Loagueado',
-            [
-                {
-                    'text': 'Aceptar',
-                    onPress: (this.aceptar.bind(this))
-                },
-                {
-                    'text': 'Cancelar',
-                    onPress: (this.cancelar.bind(this))
-                },
-            ]
-        )
+    productos() {      
+      Actions.productos();
     }
 
-    aceptar() {
-        console.log('Login aceptado');
+    tiendas() {      
+      Actions.tiendas();
     }
 
-    cancelar() {
-        console.log('Login cancelado');    
+    perfil() {      
+      Actions.perfil();
     }
 
     render() {
         return (
             <SafeAreaView style={styles.areaSegura}>
-                <View style={styles.container}>
+                {/* <View style={styles.container}>
                     <View style={styles.menu}>
                         <FlatList
                             data={DATA}
                             horizontal={true}
                             renderItem={({ item }) => <Item title={item.title} />}
                             keyExtractor={item => item.id}
+                            onPress={() => this.item.page()}
                         />
+                    </View>                
+                </View>  */}
+
+                <View style={styles.container}>
+                    <View style={styles.menu}>
+                        <Text onPress={() => this.home()} style={styles.list}>Home</Text>
+                        <Text onPress={() => this.productos()} style={styles.list}>Productos</Text>
+                        <Text onPress={() => this.tiendas()} style={styles.list}>Tiendas</Text>
+                        <Text onPress={() => this.perfil()} style={styles.list}>Perfil</Text>
                     </View>                
                 </View> 
             </SafeAreaView>
@@ -117,7 +104,7 @@ const styles = StyleSheet.create({
     },
     container: {
         flex: 1,
-        flexDirection: 'column-reverse',        
+        flexDirection: 'column-reverse',   
     },
     menu: {
         flexDirection: 'row'
@@ -125,9 +112,9 @@ const styles = StyleSheet.create({
     list:{
         height:50,
         width:100,
-        backgroundColor:'#ccc',
-        borderTopLeftRadius:25,
-        borderBottomRightRadius:25,
+        backgroundColor:'#009999',
+        borderTopLeftRadius:0,
+        borderBottomRightRadius:0,
         textAlign: 'center',
         textAlignVertical: 'center',
     } 

@@ -1,22 +1,15 @@
-import React from 'react';
-import { 
-  StyleSheet, 
-  Text, 
-  View,
-  ImageBackground,
-  Image,
-  TextInput,
-  Dimensions,
-  TouchableOpacity
-} from 'react-native';
+import React, { Component } from 'react';
+import { AppRegistry, View } from 'react-native';
+import Routes from './src/Routes';
 
-import Login from './src/Login';
-import Home from './src/Home';
 
-export default function App() {
-    return (
-      <Home />
-    );
+class reactTutorialApp extends Component {
+  render() {
+     return (
+        <Routes />
+     )
+  }
 }
+export default reactTutorialApp
+AppRegistry.registerComponent('reactTutorialApp', () => reactTutorialApp)
 
- 

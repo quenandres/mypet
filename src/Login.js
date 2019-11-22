@@ -8,8 +8,11 @@ import {
   TextInput,
   Dimensions,
   TouchableOpacity,
-  Alert
+  StatusBar
 } from 'react-native';
+
+import { Actions } from 'react-native-router-flux';
+
 
 import bgImage from '../images/lagartija.jpg';
 import logo from '../images/gato_negro.png';
@@ -25,7 +28,8 @@ class Login extends Component {
     }
 
     onLogin() {
-        Alert.alert(
+        Actions.home();
+        /* Alert.alert(
             'acceso',
             'Loagueado',
             [
@@ -38,21 +42,24 @@ class Login extends Component {
                     onPress: (this.cancelar.bind(this))
                 },
             ]
-        )
+        ) */
     }
 
-    aceptar() {
+    
+
+    /* aceptar() {
         console.log('Login aceptado');
     }
 
     cancelar() {
         console.log('Login cancelado');    
-    }
+    } */
 
 render() {
+
     return (
         <ImageBackground source={bgImage} style={styles.backgroundContainer}>
-            <View style={styles.footer}>
+            <View style={styles.header}>
                 <Text style={styles.bienvenida}>Bienvenido a</Text>
                 <Text style={styles.logoText}>My pets</Text>
             </View>
@@ -127,10 +134,10 @@ const styles = StyleSheet.create({
         marginHorizontal: 25,
         marginTop: 8
         },
-    footer: {
+    header: {
         width: WIDTH,
         justifyContent: 'flex-start',
-        marginTop: 5,
+        marginTop: 2,
         backgroundColor: 'rgba(26,232,131, 0.40)',
         borderTopLeftRadius: 50,
         borderBottomRightRadius: 50,
