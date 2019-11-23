@@ -8,10 +8,10 @@ const { width: WIDTH } = Dimensions.get('window')
 
 import Menu from '../Menu';
 
-const Perfil = () => {
+const Compra = () => {
     return (
         <View style={styles.backgroundContainer}>
-            <Text>Perfil</Text>
+            <Text>Compra</Text>
             <Menu />
         </View>
     
@@ -29,4 +29,4 @@ const styles = StyleSheet.create({
     },    
 });
 
-export default Perfil;
+export default Compra;

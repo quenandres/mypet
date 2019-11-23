@@ -6,6 +6,7 @@ import Home from './Home.js'
 import Productos from './Containers/ProductosScreen'
 import Tiendas from './Containers/TiendasScreen'
 import Perfil from './Containers/PerfilScreen'
+import Compra from './Containers/CompraScreen'
 
 const Routes = () => (
    <Router>
@@ -15,6 +16,7 @@ const Routes = () => (
          <Scene key = "productos" hideNavBar component = {Productos} title = "Productos" />
          <Scene key = "tiendas" hideNavBar component = {Tiendas} title = "tiendas" />
          <Scene key = "perfil" hideNavBar component = {Perfil} title = "perfil" />
+         <Scene key = "compra" hideNavBar component = {Compra} title = "compra" />
       </Scene>
    </Router>
 )

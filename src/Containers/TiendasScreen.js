@@ -1,7 +1,8 @@
 import React from 'react';
-import { View,Text,ImageBackground,StyleSheet,Dimensions } from 'react-native';
+import { View,Text,ImageBackground,StyleSheet,Dimensions,SafeAreaView } from 'react-native';
 
-import bgImage from '../images/gato1.jpg';
+//import bgImage from '../imgs/gato1.jpg';
+//import bgImage from '../imgs/lagartija.jpg';
 
 const { width: WIDTH } = Dimensions.get('window')
 
@@ -9,10 +10,11 @@ import Menu from '../Menu';
 
 const Tiendas = () => {
     return (
-        <ImageBackground source={bgImage} style={styles.backgroundContainer}>
+        <SafeAreaView style={styles.backgroundContainer}>
+            <StatusBar backgroundColor="blue" barStyle="light-content" />
             <Text>Tiendas</Text>
             <Menu />
-        </ImageBackground>
+        </SafeAreaView>
     
     );
 }

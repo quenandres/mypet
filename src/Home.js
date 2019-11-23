@@ -8,14 +8,18 @@ import {
   TextInput,
   Dimensions,
   StatusBar,
+  SafeAreaView,
   Alert
 } from 'react-native';
 
-import bgImage from '../images/gato3.jpg';
-import logo from '../images/gato_negro.png';
+//import bgImage from '../imgs/gato3.jpg';
+//import bgImage from '../imgs/lagartija.jpg';
+//import logo from '../imgs/gato_negro.png';
 import Icon from 'react-native-vector-icons/Ionicons'
 
 import Menu from './Menu';
+import Productos from './Componentes/Productos';
+import Tiendas from './Componentes/Tiendas';
 
 const { width: WIDTH } = Dimensions.get('window')
 const { height: HEIGHT } = Dimensions.get('window')
@@ -53,10 +57,12 @@ class Login extends Component {
 
 render() {
     return (
-        <ImageBackground source={bgImage} style={styles.backgroundContainer}>
+        <SafeAreaView style={styles.backgroundContainer}>
+            <StatusBar backgroundColor="blue" barStyle="light-content" />
+            <Tiendas />
             <Productos /> 
             <Menu />
-        </ImageBackground>
+        </SafeAreaView>
     
     );
   
@@ -131,7 +137,7 @@ const styles = StyleSheet.create({
         color:'#f0f1f1',
         fontSize: 25,
         textAlign: 'center',
-        }     
+    }
 });
 
 export default Login;

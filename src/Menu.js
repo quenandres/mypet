@@ -17,8 +17,8 @@ import Constants from 'expo-constants';
 
 import { Actions } from 'react-native-router-flux';
 
-import bgImage from '../images/gatofondo.jpg';
-import logo from '../images/gato_negro.png';
+import bgImage from '../imgs/gatofondo.jpg';
+import logo from '../imgs/gato_negro.png';
 import Icon from 'react-native-vector-icons/Ionicons'
 
 
@@ -46,6 +46,11 @@ const DATA = [
       title: 'Perfil',
       page: 'perfil',
     },
+    {
+      id: '3ac68afc-c605-48d3-23f1-fbd91aa97f63',
+      title: 'Compra',
+      page: 'compra',
+    },
   ];
 
 class Login extends Component {
@@ -70,6 +75,10 @@ class Login extends Component {
       Actions.perfil();
     }
 
+    compra() {      
+      Actions.compra();
+    }
+
     render() {
         return (
             <SafeAreaView style={styles.areaSegura}>
@@ -91,6 +100,7 @@ class Login extends Component {
                         <Text onPress={() => this.productos()} style={styles.list}>Productos</Text>
                         <Text onPress={() => this.tiendas()} style={styles.list}>Tiendas</Text>
                         <Text onPress={() => this.perfil()} style={styles.list}>Perfil</Text>
+                        <Text onPress={() => this.compra()} style={styles.list}>Compra</Text>
                     </View>                
                 </View> 
             </SafeAreaView>
@@ -111,7 +121,7 @@ const styles = StyleSheet.create({
     },
     list:{
         height:50,
-        width:100,
+        width:80,
         backgroundColor:'#009999',
         borderTopLeftRadius:0,
         borderBottomRightRadius:0,

@@ -1,7 +1,9 @@
 import React from 'react';
-import { View,Text,ImageBackground,StyleSheet,Dimensions } from 'react-native';
+import { View,Text,ImageBackground,StyleSheet,Dimensions,SafeAreaView } from 'react-native';
 
-import bgImage from '../images/perrogato2.jpg';
+//import bgImage from '../imgs/perrogato2.jpg';
+//import bgImage from '../imgs/lagartija.jpg';
+
 
 const { width: WIDTH } = Dimensions.get('window')
 
@@ -9,10 +11,10 @@ import Menu from '../Menu';
 
 const Productos = () => {
     return (
-        <ImageBackground source={bgImage} style={styles.backgroundContainer}>
+        <SafeAreaView style={styles.backgroundContainer}>
             <Text>Productos</Text>
             <Menu />
-        </ImageBackground>
+        </SafeAreaView>
     
     );
 }

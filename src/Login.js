@@ -14,8 +14,8 @@ import {
 import { Actions } from 'react-native-router-flux';
 
 
-import bgImage from '../images/lagartija.jpg';
-import logo from '../images/gato_negro.png';
+import bgImage from '../imgs/lagartija.jpg';
+import logo from '../imgs/gato_negro.png';
 import Icon from 'react-native-vector-icons/Ionicons'
 
 const { width: WIDTH } = Dimensions.get('window')
